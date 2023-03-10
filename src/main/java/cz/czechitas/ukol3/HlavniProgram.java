@@ -36,14 +36,18 @@ public class HlavniProgram {
         System.out.println(NastinPocitac.toString());
 
         NastinPocitac.zapniSe();
-        NastinPocitac.zapniSe();      // Vypise chybu, protoze pocitac uz bezi
+        NastinPocitac.zapniSe();
 
         System.out.println(NastinPocitac.toString());
         NastinPocitac.vypniSe();
 
-        NastinPocitac.vypniSe();      // Nevypise chybu, ale nic neprovede,
-        NastinPocitac.vypniSe();      // protoze pocitac je uz vypnuty
+        NastinPocitac.vypniSe();
+        NastinPocitac.vypniSe();
 
+        NastinPocitac.zapniSe();
+        NastinPocitac.jeZapnuty();
+        NastinPocitac.vytvorSouborOVelikosti(140_000_000_000L);
+        NastinPocitac.vymazSouboryOVelikosti(140_000_000_000L);
 
 
 

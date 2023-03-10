@@ -72,6 +72,41 @@ public class Pocitac {
         }
 
     }
+    public void vytvorSouborOVelikosti(long velikost) {
+        if (jeZapnuty) {
+            long vyuziteMisto = disk.getVyuziteMisto();
+            long kapacita = disk.getKapacita();
+            long zbyvajiciMisto=kapacita-vyuziteMisto-velikost;
+            if ((vyuziteMisto + velikost) > kapacita) {
+                System.err.println("Kapacita disku nedostacuje.");
+            } else {
+                disk.setVyuziteMisto(vyuziteMisto + velikost);
+                System.out.println("Zbývající místo na disku: " + (zbyvajiciMisto));
+            }
+
+        } else {
+            System.err.println("Pc je vypnutý");
+        }
+    }
+
+    public void vymazSouboryOVelikosti(long velikost) {
+        if (jeZapnuty) {
+            long vyuziteMisto = disk.getVyuziteMisto();
+            long kapacita = disk.getKapacita();
+            long zbyvajiciMisto=kapacita-vyuziteMisto+velikost;
+            if (velikost < vyuziteMisto) {
+                disk.setVyuziteMisto(vyuziteMisto + velikost);
+            } else {
+                disk.setVyuziteMisto(0);
+            }
+
+            System.out.println("Zbývající místo na disku: " + (zbyvajiciMisto));
+        } else {
+            System.err.println("Pc je vypnutý");
+        }
+    }
+
+
 
 
     @Override
