@@ -46,7 +46,7 @@ public class HlavniProgram {
 
         NastinPocitac.zapniSe();
         NastinPocitac.jeZapnuty();
-        NastinPocitac.vytvorSouborOVelikosti(140_000_000_000L);
+        NastinPocitac.vytvorSouborOVelikosti(120_000_000_000L);
         NastinPocitac.vymazSouboryOVelikosti(140_000_000_000L);
 
 

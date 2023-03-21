@@ -45,7 +45,7 @@ public class Pocitac {
     }
         private void overStavKomponentASpustSe() {
 
-            if (disk != null && pamet != null && procesor != null) {
+            if (disk != null || pamet != null || procesor != null) {
                 jeZapnuty = true;
                 System.out.println("Počítač se zapnul!");
             } else {
@@ -95,7 +95,7 @@ public class Pocitac {
             long kapacita = disk.getKapacita();
             long zbyvajiciMisto=kapacita-vyuziteMisto+velikost;
             if (velikost < vyuziteMisto) {
-                disk.setVyuziteMisto(vyuziteMisto + velikost);
+                disk.setVyuziteMisto(vyuziteMisto - velikost);
             } else {
                 disk.setVyuziteMisto(0);
             }
@@ -111,7 +111,7 @@ public class Pocitac {
 
     @Override
         public String toString () {
-        return "Počítač:" + procesor + pamet + disk;
+        return "Počítač:" + " " + procesor + " " + pamet + " " + disk;
         }
     }
 
